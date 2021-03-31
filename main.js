@@ -9,7 +9,7 @@ function player_update(){
         player_object=Img;
         player_object.scaleToWidth(150);
         player_object.scaleToHeight(140);
-        player_obj.set({
+        player_object.set({
             top:player_y,
             left:player_x
     
@@ -79,7 +79,7 @@ function my_keydown(e){
 
 
     }
-    if(keyPressed=='38'){
+    if(keyPressed=='39'){
 
         right();
         console.log("right");
@@ -162,6 +162,43 @@ function my_keydown(e){
     }
 }
 
+function up(){
+    if(player_y>=0){
+        player_y= player_y - block_image_height;
+        console.log("Block image height is =" +block_image_height);
+        console.log("When up arrow pressed X = "+player_x+ "Y =" +player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function down(){
+    if(player_y<=500){
+        player_y= player_y + block_image_height;
+        console.log("Block image height is =" +block_image_height);
+        console.log("When up arrow pressed X = "+player_x+ "Y =" +player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function left(){
+    if(player_x>0){
+        player_x= player_x - block_image_width;
+        console.log("Block image width is =" +block_image_width);
+        console.log("When up arrow pressed X = "+player_x+ "Y =" +player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function right(){
+    if(player_x<850){
+        player_x= player_x + block_image_width;
+        console.log("Block image width is =" +block_image_width);
+        console.log("When up arrow pressed X = "+player_x+ "Y =" +player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
     
 
 
